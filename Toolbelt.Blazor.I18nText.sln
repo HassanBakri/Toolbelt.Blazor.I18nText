@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.Blazor.I18nText", "Toolbelt.Blazor.I18nText\Toolbelt.Blazor.I18nText.csproj", "{87CB0C26-4A06-4C5C-A2E7-06648E2E6931}"
+	ProjectSection(ProjectDependencies) = postProject
+		{784D7AF5-C724-4642-96D2-1A8915188A70} = {784D7AF5-C724-4642-96D2-1A8915188A70}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Toolbelt.Blazor.I18nText.CompileTask", "Toolbelt.Blazor.I18nText.CompileTask\Toolbelt.Blazor.I18nText.CompileTask.csproj", "{784D7AF5-C724-4642-96D2-1A8915188A70}"
 EndProject

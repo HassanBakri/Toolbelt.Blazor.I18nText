@@ -189,16 +189,22 @@ namespace Toolbelt.Blazor.I18nText
                 catch (HttpRequestException e) when (e.Message.Split(' ').Contains("404")) { }
             }
 
-            var fields = typeof(T).GetFields(BindingFlags.Instance | BindingFlags.Public).Where(f => f.FieldType == typeof(string));
+            var fields = typeof(T).GetFields(BindingFlags.Instance | BindingFlags.Public)
+                .Where(f => f.FieldType == typeof(string));
+            var extValues =typeof(T).GetProperty("extValues");
             if (textMap != null)
             {
                 foreach (var field in fields)
                 {
                     field.SetValue(table, textMap.TryGetValue(field.Name, out var text) ? text : field.Name);
+                textMap.Remove(field.Name);
                 }
+                
             }
             else foreach (var field in fields) field.SetValue(table, field.Name);
 
+            //Dictionary<string,string> extValues
+            extValues.SetValue(table, textMap);
             return table;
         }
 
