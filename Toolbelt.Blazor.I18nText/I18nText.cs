@@ -191,7 +191,7 @@ namespace Toolbelt.Blazor.I18nText
 
             var fields = typeof(T).GetFields(BindingFlags.Instance | BindingFlags.Public)
                 .Where(f => f.FieldType == typeof(string));
-            var extValues =typeof(T).GetProperty("extValues");
+            
             if (textMap != null)
             {
                 foreach (var field in fields)
@@ -203,6 +203,8 @@ namespace Toolbelt.Blazor.I18nText
             }
             else foreach (var field in fields) field.SetValue(table, field.Name);
 
+            var extValues =typeof(T).GetField("extValues");
+            //extValues.
             //Dictionary<string,string> extValues
             extValues.SetValue(table, textMap);
             return table;

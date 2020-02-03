@@ -196,24 +196,24 @@ namespace Toolbelt.Blazor.I18nText
                 typeCode.Add("        public string this[string key] => global::Toolbelt.Blazor.I18nText.I18nTextExtensions.GetFieldValue(this, key);");
                 typeCode.Add("");
 
-                typeCode.Add("private Dictionary<string,string> extValues { get; set; }");
+                typeCode.Add("        public Dictionary<string,string> extValues = new Dictionary<string,string> ();");
                 typeCode.Add("");
 
-                typeCode.Add("private string valstr = \"\";");
+                typeCode.Add("        private string valstr = \"\";");
 
 
-                typeCode.Add("public string GetValue(string Key)");
+                typeCode.Add("        public string GetValue(string Key)");
                 typeCode.Add("");
 
-                typeCode.Add("{");
+                typeCode.Add("        {");
                 typeCode.Add("");
 
 
                 typeCode.Add("");
-                typeCode.Add(" return extValues.TryGetValue(Key, out valstr)?valstr:Key; ");
+                typeCode.Add("        return extValues.TryGetValue(Key, out valstr)?valstr:Key; ");
                 typeCode.Add("");
 
-                typeCode.Add(" } ");
+                typeCode.Add("        } ");
                 typeCode.Add("");
 
                 typeCode.Add("");
