@@ -1,3 +1,6 @@
+@HassanBakri
+this forked branch added support for loading new keys (where the key added during run time) to the injected I18nText table by intudceing Dictionary<string, string > in the generated typed class and new method to getValue(Key) and fedding it during di initlization
+
 # Blazor Internationalization(I18n) Text [![NuGet Package](https://j.mp/2nZUe7M)](https://j.mp/2nbtArW)
 
 ## Summary
